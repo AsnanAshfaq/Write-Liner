@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title><%= title%></title>
+
+
+
+
+    <!-- including other links  -->
+    <%- include('../Partion/linkTags.ejs')%>
+
+    <!-- css link  -->
+    <link rel="stylesheet" href="/Styles/Large_Screens/index.css">
+</head>
+
+<body>
+
+
+    <!-- header  -->
+    <%- include('../Partion/header')%>
+
+
+    <div class="frontImage_container">
+        <img src="/Images/home_frontPage_image.jpg" alt="">
+
+        <div class="frontImageBlog1 blogOverImage">
+            <a href="#">
+
+                <!-- <img src="/Images/fed.jpg" alt="" style="width: inherit; height: inherit;"> -->
+            </a>
+        </div>
+        <div class="frontImageBlog2 blogOverImage">
+            <a href="#">
+
+                <!-- <img src="/Images/fed.jpg" alt="" style="width: inherit; height: inherit;"> -->
+            </a>
+        </div>
+        <div class="frontImageBlog3 blogOverImage">
+            <a href="#">
+
+                <!-- <img src="/Images/fed.jpg" alt="" style="width: inherit; height: inherit;"> -->
+            </a>
+        </div>
+    </div>
+    </div>
+
+    <h3 class="heading">Latest Blogs</h3>
+
+    <div class="categoryCardContainer container sports ">
+        <h3 class="categoryCardContainerHeading" style="user-select: none;">Sports</h3>
+
+
+        <div class="card-deck">
+            <% for (let i =0; i<4;i++) {%>
+            <%- include('../Partion/carf_of_blog') %>
+            <%}%>
+        </div>
+       
+    </div>
+
+    <div class="categoryCardContainer  container fashion">
+        <h3 class="categoryCardContainerHeading"  style="user-select: none;">Fashion</h3>
+        
+        <div class="card-deck">
+            <% for (let i =0; i<4;i++) {%>
+            <%- include('../Partion/carf_of_blog') %>
+            <%}%>
+        </div>
+        
+    </div>
+
+    <div class="categoryCardContainer  container business">
+        <h3 class="categoryCardContainerHeading"  style="user-select: none;">Business</h3>
+        
+        <div class="card-deck">
+            <% for (let i =0; i<4;i++) {%>
+            <%- include('../Partion/carf_of_blog') %>
+            <%}%>
+        </div>
+       
+    </div>
+
+    <div class="categoryCardContainer container religion">
+        <h3 class="categoryCardContainerHeading"  style="user-select: none;">Religion</h3>
+        
+        <div class="card-deck">
+            <% for (let i =0; i<4;i++) {%>
+            <%- include('../Partion/carf_of_blog') %>
+            <%}%>
+        </div>
+
+    </div>
+
+    <div class="categoryCardContainer container edutaion">
+        <h3 class="categoryCardContainerHeading"  style="user-select: none;">Education</h3>
+        
+        <div class="card-deck">
+            <% for (let i =0; i<4;i++) {%>
+            <%- include('../Partion/carf_of_blog') %>
+            <%}%>
+        </div>
+        
+    </div>
+
+
+   
+
+    <br><br><br><br><br><br>
+    <!--  footer  -->
+    <%- include('./footer.ejs')%>
+
+
+            <!-- including bootstrap scripts  -->
+            <%- include('../Partion/BootstrapScripts') %>
+
+</body>
+
+</html>
