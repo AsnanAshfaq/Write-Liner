@@ -1,18 +1,21 @@
 const express = require('express')
 const mongoose = require('mongoose')
+require('dotenv/config')
+
 
 //importing routes
 const blogRoutes = require('./Routes/blogRoutes')
+const adminRoutes = require('./Routes/adminRoutes')
 
 const app = express()
 
 const port = 3000
 
 //connection String
-const dbURI = 'mongodb+srv://Asnan:Asnan@wrtieliner.lfkei.mongodb.net/WriteLiner?retryWrites=true&w=majority'
+
 
 //connecting to mongoDB
-mongoose.connect(dbURI, { useUnifiedTopology: true, useNewUrlParser: true }, (error) => {
+mongoose.connect(process.env.DB_CONNECTION_STRING, { useUnifiedTopology: true, useNewUrlParser: true }, (error) => {
     if(error != null)console.log(error)
 })
 
@@ -38,6 +41,7 @@ app.get('/about', (req, res) => {
 
 //middleware for  Routes
 app.use(blogRoutes)
+app.use('/admin',adminRoutes)
 
 //middleware for 404 error
 app.use((request, response) => {

@@ -7,18 +7,17 @@
 
     <title><%= title%></title>
 
-
-
-
     <!-- including other links  -->
     <%- include('../Partion/linkTags.ejs')%>
 
     <!-- css link  -->
+    <link rel="stylesheet" href="/Styles/Large_Screens/header.css">
     <link rel="stylesheet" href="/Styles/Large_Screens/index.css">
+    <link rel="stylesheet" href="/Styles/Large_Screens/footer.css">
+
 </head>
 
 <body>
-
 
     <!-- header  -->
     <%- include('../Partion/header')%>
@@ -50,62 +49,41 @@
 
     <h3 class="heading">Latest Blogs</h3>
 
-    <div class="categoryCardContainer container sports ">
+    <div class="categoryCardContainer container  ">
         <h3 class="categoryCardContainerHeading" style="user-select: none;">Sports</h3>
 
 
-        <div class="card-deck">
-            <% for (let i =0; i<4;i++) {%>
-            <%- include('../Partion/carf_of_blog') %>
-            <%}%>
-        </div>
-       
-    </div>
-
-    <div class="categoryCardContainer  container fashion">
-        <h3 class="categoryCardContainerHeading"  style="user-select: none;">Fashion</h3>
-        
-        <div class="card-deck">
-            <% for (let i =0; i<4;i++) {%>
-            <%- include('../Partion/carf_of_blog') %>
-            <%}%>
-        </div>
-        
-    </div>
-
-    <div class="categoryCardContainer  container business">
-        <h3 class="categoryCardContainerHeading"  style="user-select: none;">Business</h3>
-        
-        <div class="card-deck">
-            <% for (let i =0; i<4;i++) {%>
-            <%- include('../Partion/carf_of_blog') %>
-            <%}%>
-        </div>
-       
-    </div>
-
-    <div class="categoryCardContainer container religion">
-        <h3 class="categoryCardContainerHeading"  style="user-select: none;">Religion</h3>
-        
-        <div class="card-deck">
-            <% for (let i =0; i<4;i++) {%>
-            <%- include('../Partion/carf_of_blog') %>
-            <%}%>
-        </div>
+        <%- include('../Partion/blogCard',{category: 'Sports'}) %>
 
     </div>
 
-    <div class="categoryCardContainer container edutaion">
-        <h3 class="categoryCardContainerHeading"  style="user-select: none;">Education</h3>
-        
-        <div class="card-deck">
-            <% for (let i =0; i<4;i++) {%>
-            <%- include('../Partion/carf_of_blog') %>
-            <%}%>
-        </div>
-        
+    <div class="categoryCardContainer  container ">
+        <h3 class="categoryCardContainerHeading" style="user-select: none;">Fashion</h3>
+
+        <%- include('../Partion/blogCard',{category: 'Fashion'}) %>
+
     </div>
 
+    <div class="categoryCardContainer  container ">
+        <h3 class="categoryCardContainerHeading" style="user-select: none;">Business</h3>
+
+        <%- include('../Partion/blogCard',{category: 'Business'}) %>
+
+    </div>
+
+    <div class="categoryCardContainer container ">
+        <h3 class="categoryCardContainerHeading" style="user-select: none;">Religion</h3>
+
+        <%- include('../Partion/blogCard',{category: 'Religion'}) %>
+
+    </div>
+
+    <div class="categoryCardContainer container ">
+        <h3 class="categoryCardContainerHeading" style="user-select: none;">Education</h3>
+
+        <%- include('../Partion/blogCard',{category: 'Religion'}) %>
+
+    </div>
 
     <!--  footer  -->
     <%- include('../Partion/footer.ejs') %>

@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title%></title>
-</head>
-<body>
-    <h3>Welcome to About Page</h3>
 
-        <!-- dynamic footer  -->
-        <%- include('./footer.ejs')%>
+    <!-- including other links  -->
+    <%- include('../Partion/linkTags.ejs')%>
+
+    <!-- css link  -->
+    <link rel="stylesheet" href="/Styles/Large_Screens/about.css">
+</head>
+
+<body>
+    <!-- header  -->
+    <%- include('../Partion/header')%>
+
+    <h3>THis is the body of About Page</h3>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <!-- dynamic footer  -->
+    <%- include('../Partion/footer.ejs')%>
+
+
+    <!-- including bootstrap scripts  -->
+    <%- include('../Partion/BootstrapScripts') %>
 </body>
+
 </html>

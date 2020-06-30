@@ -1,0 +1,32 @@
+/* styling footer STARTS  */
+.footerContainer{
+    width: auto;
+    height: auto;
+    background-color: black;
+    display: flex;
+}
+
+.copyrightContainer{
+    flex: 1;
+}
+.copyrightContainer h3{
+    font-family: 'Finger Paint', cursive;
+    font-weight: 100;
+    font-style: 25px;
+    padding: 20px;
+    color: white;
+}
+.copyrightContainer h5{
+    padding: 20px;
+    color: white;
+}
+.contactContainer{
+    flex: 1;
+    justify-content: center;
+    align-items: flex-end;
+}
+.contactContainer h3 , .contactContainer a{
+    padding: 20px;
+    color: white;
+}
+/* styling footer ENDS  */

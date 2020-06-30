@@ -1,0 +1,24 @@
+<div class="card-deck">
+
+    <%const linkArray = ["link1","link2","link3","link4"]%>
+
+    <% for (let i =0; i<linkArray.length;i++) {%>
+
+    <div class="card cardContainer" style="width: 18rem;">
+        <a href="<%= category + "/" +linkArray[i]%>">
+            <img class="card-img-top" src="/Images/fed.jpg" alt="Card image cap">
+            <div class="card-body">
+                <p class="card-text"
+                    style="display: block; display: -webkit-box;max-width: 200px;-webkit-line-clamp: 4;-webkit-box-orient: vertical;overflow: hidden;text-overflow: ellipsis;">
+                    Some quick example text to build on the card title and make up
+                    the bulk of the card's
+                    content.
+                    Some quick example text to build on the card title and make up the bulk of the card's
+                    content.
+                </p>
+            </div>
+        </a>
+
+    </div>
+    <%}%>
+</div>

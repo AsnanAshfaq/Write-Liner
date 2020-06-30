@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title><%= title%></title>
+
+     <!-- including other links  -->
+     <%- include('../Partion/linkTags.ejs')%>
+
+     <!-- css link  -->
+     <link rel="stylesheet" href="/Styles/Large_Screens/header.css">
+     <link rel="stylesheet" href="/Styles/Large_Screens/admin/admin-add-blog.css">
+     <link rel="stylesheet" href="/Styles/Large_Screens/footer.css">
+
+</head>
+
+<body>
+
+     <!-- header  -->
+     <%- include('../Partion/header')%>
+
+     <form>
+          <div class="form-group pl-3 pt-3 w-25">
+               <label for="title" class="inputLabel">Title</label>
+               <input type="text" class="form-control" id="title" placeholder="Be Creative with the Title" name="title">
+          </div>
+          <div class="form-group pl-3 pt-3 pr-3">
+               <label for="body" class="inputLabel">Body</label>
+               <textarea class="form-control" id="body" rows="15" name="body"
+                    placeholder="Start Writing your Blog Here"></textarea>
+          </div>
+
+          <div class="form-group w-25 pl-3 ">
+               <label for="inputState" class="inputLabel">Category</label>
+               <select id="inputState" class="form-control" name="category">
+                    <option selected>Choose...</option>
+                    <option>Sports</option>
+                    <option>Fashion</option>
+                    <option>Business</option>
+                    <option>Religion</option>
+                    <option>Education</option>
+               </select>
+          </div>
+
+          <div class="form-group w-25 pl-3">
+               <label for="image-file" class="inputLabel">Select Image </label>
+               <input type="file" class="form-control-file" id="image-file" name="image-file" multiple>
+          </div>
+     </form>
+
+     <!-- dynamic footer  -->
+     <%- include('../Partion/footer.ejs')%>
+
+
+     <!-- including bootstrap scripts  -->
+     <%- include('../Partion/BootstrapScripts') %>
+
+</body>
+
+</html>

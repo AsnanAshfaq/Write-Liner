@@ -9,7 +9,7 @@ const route = express.Router()
 route.get('/addblog', (req, res) => {
 
     const blog = new Blog({
-        title: 'my blog',
+        title: 'my new blog',
         body: 'this is the body',
         author: 'M.Asnan Ashfaq',
         category: 'None',
