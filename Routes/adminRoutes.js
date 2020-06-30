@@ -1,5 +1,7 @@
 
 const express = require('express')
+const addBlogController = require('../Controllers/Admin/admin-add-blog')
+
 
 const adminRoutes = express.Router()
 
@@ -10,6 +12,8 @@ adminRoutes.get('/',(req,res) => {
         title: 'Write Liner | Admin'
     })
 })
+
+adminRoutes.post('/', addBlogController)
 
 // adding an admin 
 adminRoutes.get('/add',(req,res) => {

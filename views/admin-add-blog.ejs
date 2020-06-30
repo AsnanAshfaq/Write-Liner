@@ -21,7 +21,7 @@
      <!-- header  -->
      <%- include('../Partion/header')%>
 
-     <form>
+     <form action="http://localhost:3000/admin" method="POST" id="addBlogForm">
           <div class="form-group pl-3 pt-3 w-25">
                <label for="title" class="inputLabel">Title</label>
                <input type="text" class="form-control" id="title" placeholder="Be Creative with the Title" name="title">
@@ -46,14 +46,22 @@
 
           <div class="form-group w-25 pl-3">
                <label for="image-file" class="inputLabel">Select Image </label>
-               <input type="file" class="form-control-file" id="image-file" name="image-file" multiple>
+               <input type="file" class="form-control-file" id="image-file" name="image" multiple>
+          </div>
+
+          <div class="form-group w-25 pl-3 my-4">
+               <button type="submit" class="btn bg-dark text-white " onsubmit="birthdayalert">Add new Blog</button>
           </div>
      </form>
 
      <!-- dynamic footer  -->
      <%- include('../Partion/footer.ejs')%>
 
-
+     <script>
+          function birthdayalert() {
+               console.log("Tomorrow is my biasdsrthday")
+          }
+     </script>
      <!-- including bootstrap scripts  -->
      <%- include('../Partion/BootstrapScripts') %>
 
