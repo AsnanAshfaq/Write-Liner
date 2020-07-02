@@ -2,68 +2,87 @@
 <html lang="en">
 
 <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title><%= title%></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title%>
+    </title>
 
-     <!-- including other links  -->
-     <%- include('../Partion/linkTags.ejs')%>
+    <!-- including other links  -->
+    <%- include('../Partion/linkTags.ejs')%>
 
-     <!-- css link  -->
-     <link rel="stylesheet" href="/Styles/Large_Screens/header.css">
-     <link rel="stylesheet" href="/Styles/Large_Screens/admin/admin-add-blog.css">
-     <link rel="stylesheet" href="/Styles/Large_Screens/footer.css">
+    <!-- css link  -->
+    <link rel="stylesheet" href="/Styles/Large_Screens/header.css">
+    <link rel="stylesheet" href="/Styles/Large_Screens/admin/admin-add-blog.css">
+    <link rel="stylesheet" href="/Styles/Large_Screens/footer.css">
 
 </head>
 
 <body>
 
-     <!-- header  -->
-     <%- include('../Partion/header')%>
+    <!-- header  -->
+    <%- include('../Partion/header')%>
 
-     <form action="http://localhost:3000/admin" method="POST" id="addBlogForm">
-          <div class="form-group pl-3 pt-3 w-25">
-               <label for="title" class="inputLabel">Title</label>
-               <input type="text" class="form-control" id="title" placeholder="Be Creative with the Title" name="title">
-          </div>
-          <div class="form-group pl-3 pt-3 pr-3">
-               <label for="body" class="inputLabel">Body</label>
-               <textarea class="form-control" id="body" rows="15" name="body"
-                    placeholder="Start Writing your Blog Here"></textarea>
-          </div>
+    <div class="Container">
+        <!-- side bar  -->
+        <%- include('./admin-sideBar.ejs')%>
 
-          <div class="form-group w-25 pl-3 ">
-               <label for="inputState" class="inputLabel">Category</label>
-               <select id="inputState" class="form-control" name="category">
-                    <option selected>Choose...</option>
+
+        <form action="http://localhost:3000/admin/add-blog" method="POST" id="addBlogForm"
+            enctype="multipart/form-data">
+
+            <% if(error !='') {%>
+            <div class="alert alert-danger m-3" role="alert">
+                <%= error%>
+            </div>
+            <% }%>
+
+            <% if(success !='') {%>
+            <div class="alert alert-info m-3" role="alert">
+                <%= success%>
+            </div>
+            <% }%>
+
+            <h3 class="m-3" style="user-select: none;">Add a New Blog</h3>
+            <div class="form-group pl-3 pt-3 w-25">
+                <label for="title" class="inputLabel">Title</label>
+                <input type="text" class="form-control" id="title" placeholder="Be Creative with the Title" name="title"
+                    value="<%= blogTitle%>">
+            </div>
+            <div class="form-group pl-3 pt-3 pr-3">
+                <label for="body" class="inputLabel">Body</label>
+                <textarea class="form-control" id="body" rows="15" name="body"
+                    placeholder="Start Writing your Blog Here"> <%= blogBody%></textarea>
+            </div>
+
+            <div class="form-group w-25 pl-3 ">
+                <label for="inputState" class="inputLabel">Category</label>
+                <select id="inputState" class="form-control" name="category">
+                    <option selected> Choose...</option>
                     <option>Sports</option>
                     <option>Fashion</option>
                     <option>Business</option>
                     <option>Religion</option>
                     <option>Education</option>
-               </select>
-          </div>
+                </select>
+            </div>
 
-          <div class="form-group w-25 pl-3">
-               <label for="image-file" class="inputLabel">Select Image </label>
-               <input type="file" class="form-control-file" id="image-file" name="image" multiple>
-          </div>
+            <div class="form-group w-25 pl-3">
+                <label for="image-file" class="inputLabel">Select Image </label>
+                <input type="file" class="form-control-file" id="image-file" name="image">
+            </div>
 
-          <div class="form-group w-25 pl-3 my-4">
-               <button type="submit" class="btn bg-dark text-white " onsubmit="birthdayalert">Add new Blog</button>
-          </div>
-     </form>
+            <div class="form-group w-25 pl-3 my-4">
+                <button type="submit" class="btn bg-dark text-white " onsubmit="birthdayalert()">Add new Blog</button>
+            </div>
+        </form>
 
-     <!-- dynamic footer  -->
-     <%- include('../Partion/footer.ejs')%>
+    </div>
+    <!-- dynamic footer  -->
+    <%- include('../Partion/footer.ejs')%>
 
-     <script>
-          function birthdayalert() {
-               console.log("Tomorrow is my biasdsrthday")
-          }
-     </script>
-     <!-- including bootstrap scripts  -->
-     <%- include('../Partion/BootstrapScripts') %>
+    <!-- including bootstrap scripts  -->
+    <%- include('../Partion/BootstrapScripts') %>
 
 </body>
 

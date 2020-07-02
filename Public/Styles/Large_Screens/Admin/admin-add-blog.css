@@ -1,5 +1,10 @@
+.Container{
+    display: flex;
+    flex-direction: row;
+}
+.Container form{
+    flex: 1;
+}
 .inputLabel{
     font-size: 28px;
 }
-
-

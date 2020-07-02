@@ -11,21 +11,24 @@ const app = express()
 
 const port = 3000
 
-//connection String
-
 
 //connecting to mongoDB
-mongoose.connect(process.env.DB_CONNECTION_STRING, { useUnifiedTopology: true, useNewUrlParser: true }, (error) => {
-    if(error != null)console.log(error)
+mongoose.connect(process.env.DB_CONNECTION_STRING, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true
+}, (error) => {
+    if (error != null) console.log(error)
 })
 
 //setting view engine
 app.set('view engine', 'ejs')
 
 //middleware for serving static files
-app.use( express.static ('public'))
+app.use(express.static('public'))
 
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({
+    extended: true
+}))
 
 //home path
 app.get('/', (req, res) => {
@@ -43,7 +46,7 @@ app.get('/about', (req, res) => {
 
 //middleware for  Routes
 app.use(blogRoutes)
-app.use('/admin',adminRoutes)
+app.use('/admin', adminRoutes)
 
 //middleware for 404 error
 app.use((request, response) => {

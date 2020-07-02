@@ -1,1 +1,3 @@
-console.log("My birthday is tomorrow")
+const birthdayalert = () => {
+    console.log("it is my birthday")
+}

@@ -4,30 +4,36 @@ const schema = mongoose.Schema
 
 //creating Schema
 const blogSchema = new schema({
-    title:{
+    title: {
         type: String,
         required: true
     },
-    body:{
+    body: {
         type: String,
         required: true
     },
-    author:{
+    author: {
         type: String,
         required: true
     },
-    category:{
+    category: {
         type: String,
         required: true
     },
-    comments:[],
+    image: {
+        data: Buffer,
+        contentType: String
+    },
+    comments: [],
     likesCount: Number,
-    likedBy:[],
+    likedBy: [],
 
-},{ timestamps: true})
+}, {
+    timestamps: true
+})
 
 
 //creating Model
-const Blog = mongoose.model('Blogs',blogSchema)
+const Blog = mongoose.model('Blogs', blogSchema)
 
-module.exports = Blog 
+module.exports = Blog
