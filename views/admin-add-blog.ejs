@@ -32,13 +32,15 @@
             enctype="multipart/form-data">
 
             <% if(error !='') {%>
-            <div class="alert alert-danger m-3" role="alert">
+            <div class="alert alert-danger alert-dismissible m-3 w-50" role="alert">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                 <%= error%>
             </div>
             <% }%>
 
             <% if(success !='') {%>
-            <div class="alert alert-info m-3" role="alert">
+            <div class="alert alert-info alert-dismissible m-3 w-50" role="alert">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                 <%= success%>
             </div>
             <% }%>
@@ -59,11 +61,13 @@
                 <label for="inputState" class="inputLabel">Category</label>
                 <select id="inputState" class="form-control" name="category">
                     <option selected> Choose...</option>
-                    <option>Sports</option>
+                    <option>Religion</option>
                     <option>Fashion</option>
                     <option>Business</option>
-                    <option>Religion</option>
+                    <option>Sports</option>
                     <option>Education</option>
+                    <option>Technology</option>
+                    <option>Others</option>
                 </select>
             </div>
 

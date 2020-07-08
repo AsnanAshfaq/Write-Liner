@@ -44,6 +44,9 @@
     flex: 1;
     padding: 20px;
 }
+.dropdown-menu a:hover {
+    background-color: black;
+}
 .category{
     background-color: black;
     color: white;

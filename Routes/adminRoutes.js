@@ -31,7 +31,10 @@ adminRoutes.get("/add-blog", (req, res) => {
 
 // updating a blog by admin 
 adminRoutes.get("/update-blog", (req, res) => {
-  res.send("Updating  a blog")
+  res.render("admin-update-blog", {
+    title: "Write Liner | Update blog",
+  });
+  
 });
 
 

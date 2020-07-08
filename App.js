@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 require('dotenv/config')
+const Blog = require('./Model/blogSchema')
 
 
 //importing routes
@@ -26,14 +27,12 @@ app.set('view engine', 'ejs')
 //middleware for serving static files
 app.use(express.static('public'))
 
+app.use('/uploads',express.static('uploads'))       //applies this middleware only for routes which contains '/uploads' in their route and then the file name
+
 app.use(express.urlencoded({
     extended: true
 }))
 
-//home path
-app.get('/', (req, res) => {
-    res.redirect('/blogs')
-})
 
 
 //about path

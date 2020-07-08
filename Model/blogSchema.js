@@ -12,28 +12,27 @@ const blogSchema = new schema({
         type: String,
         required: true
     },
-    author: {
-        type: String,
-        required: true
-    },
     category: {
         type: String,
         required: true
     },
     image: {
-        data: Buffer,
-        contentType: String
+        type: String,
+        required: true
     },
-    comments: [],
     likesCount: Number,
+    commentCount: Number,
     likedBy: [],
+    commentedBy: []
 
 }, {
     timestamps: true
 })
 
 
-//creating Model
-const Blog = mongoose.model('Blogs', blogSchema)
+//creating generic Model function 
+const genericModel = (category) => {
+    return mongoose.model(category, blogSchema)
+}
 
-module.exports = Blog
+module.exports = genericModel
