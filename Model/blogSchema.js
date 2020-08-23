@@ -32,7 +32,6 @@ const blogSchema = new schema({
 
 //creating generic Model function 
 const genericModel = (category) => {
-    // returns a model based on the category 
     return mongoose.model(category, blogSchema)
 }
 

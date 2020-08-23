@@ -1,35 +1,24 @@
-<div class="container-fluid">
-    <div class="row d-flex flex-row">
-        <div class="col-10 m-0 p-0">
-            <h3 class="p-2" style="user-select: none;"><%= categoryContent[0].category %></h3>
-        </div>
-        <div class="col-2 d-flex justify-content-end align-items-center m-0 p-0">
-            <a href="/category/<%= categoryContent[0].category %>" class="text-dark">
-                <h5>View all</h5>
-            </a>
-        </div>
-    </div>
-</div>
-
-
 <div class="card-deck">
 
-    <!-- looping through all the blogs of a category -->
-    <% categoryContent.forEach(blog => { %>
-    <div class="card">
-        <a href="/category/<%= blog.category %>/<%= blog._id %>">
-            <div class="wrapper bg-dark" style="width: 100%;height: 200px;">
-                
-                <img class = "img-responsive" style="width: inherit;height: inherit;" src="/<%= blog.image%>" alt="Card image">
-            </div>
-            <div class="card-body p-2 w-auto h-auto">
-                <p class="card-text">
-                    <%- blog.body.substring(0, 150)+"..."%>
+    <%const linkArray = ["link1","link2","link3","link4"]%>
+
+    <% for (let i =0; i<linkArray.length;i++) {%>
+
+    <div class="card cardContainer" style="width: 18rem;">
+        <a href="<%= category + "/" +linkArray[i]%>">
+            <img class="card-img-top" src="/Images/fed.jpg" alt="Card image cap">
+            <div class="card-body">
+                <p class="card-text"
+                    style="display: block; display: -webkit-box;max-width: 200px;-webkit-line-clamp: 4;-webkit-box-orient: vertical;overflow: hidden;text-overflow: ellipsis;">
+                    Some quick example text to build on the card title and make up
+                    the bulk of the card's
+                    content.
+                    Some quick example text to build on the card title and make up the bulk of the card's
+                    content.
                 </p>
             </div>
         </a>
-    </div>
-    <% }); %>
-</div>
 
-<br>
+    </div>
+    <%}%>
+</div>

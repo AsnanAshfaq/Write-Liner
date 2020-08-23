@@ -1,39 +1,61 @@
-<div class="container-fluid" style="background-color: #000000;">
-    <div class="row">
-        <!-- brand logo  -->
-        <div class="header_logo">
-            <h2 class="logo">
-                <a href="/">
-                    Write Liner
-                    <img src="/Images/white-pen.png" alt="Write Liner" class="logo_pen">
-                </a>
-            </h2>
-        </div>
+<div class="header_container">
 
-        <!-- search bar  -->
-        <div class="input-group col-sm-7 col-xs-4 col-lg-8 col-md-6 mb-3 p-4  d-flex justify-content-center">
-            <input type="text" class="rounded shadow-none p-2 w-50 h-100"  placeholder="Search Blog Here">
-            <div class="input-group-append">
-                <button class="btn rounded  btn m-1  form-control shadow-none bg-light  text-dark">
-                    Search
-                </button>
-            </div>
-        </div>
-
-        <!-- side links  -->
-        <!-- <div class="col-sm-2 col-xs-4  col-lg-3  col-md-4  d-flex justify-content-end p-4"> -->
-            <!-- <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <h6 class="text-light">Register</h6>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <h6 class="text-light">Sign In</h6>
-                    </a>
-                </li>
-            </ul> -->
-        <!-- </div> -->
+    <!-- header logo  -->
+    <div class="header_logo">
+        <h2 class="logo">
+            <a href="/">
+                Write Liner
+                <img src="/Images/white-pen.png" alt="Write Liner" class="logo_pen">
+            </a>
+        </h2>
     </div>
+
+
+
+    <!-- header drop down -->
+    <div class="dropdown">
+        <a class="btn btn-secondary dropdown-toggle category shadow-none" href="#" role="button" id="dropdownMenuLink"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Category
+        </a>
+
+        <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item  text-light" href="#">Sports</a>
+            <a class="dropdown-item  text-light" href="#">Fashion</a>
+            <a class="dropdown-item  text-light" href="#">Business</a>
+            <a class="dropdown-item  text-light" href="#">Religion</a>
+            <a class="dropdown-item  text-light" href="#">Education</a>
+        </div>
+    </div>
+
+
+    <!-- search input  -->
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+
+            <span class="input-group-text search_icon" id="basic-addon1">
+                <i class="fa fa-search"></i>
+            </span>
+        </div>
+        <input type="text" class="form-control search_input" placeholder="Search Blog Here " aria-label="Username"
+            aria-describedby="basic-addon1">
+    </div>
+
+    <!-- register panel  -->
+
+    <ul class="nav nav-tabs register">
+        <li class="nav-item">
+            <a class="nav-link " href="/about">About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Sign In</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Sign Up</a>
+        </li>
+
+    </ul>
+
+
 </div>

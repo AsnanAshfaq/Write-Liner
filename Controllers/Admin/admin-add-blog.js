@@ -57,7 +57,7 @@ const validate_new_blog = (req, res) => {
 
   var error = ''
   //title cannot be empty and  length cannot be less than 10 characters
-  if (title == "" || title.trim().length < 10 || title.trim().length > 35) error = "Invalid Blog 'Title'"
+  if (title == "" || title.trim().length < 10) error = "Invalid Blog 'Title'"
   //body cannot be empty and length cannot be less than 300 characters
   else if (body == "" || body.trim().length < 299) error = "Invalid Blog 'Body' "
   //category must not be ''Choose...'
@@ -68,7 +68,7 @@ const validate_new_blog = (req, res) => {
   if (error != '') {
     // found an error in the blog 
 
-    res.render('./admin/admin-add-blog', {
+    res.render('admin-add-blog', {
       title: 'Write Line | Admin | Invalid Blog ',
       blogTitle: title,
       blogBody: body,
@@ -92,24 +92,18 @@ const validate_new_blog = (req, res) => {
     })
 
     modelObject.save()
-      .then(result => 
-        res.render('./admin/admin-add-blog', {
-          title: 'Write Line | Admin | Add Blog',
-          blogTitle: '',
-          blogBody: '',
-          error: '',
-          success: `A new Blog has been added into '${category}' Category`
-        })
-        )
-      .catch(err => 
-        res.render('./admin/admin-add-blog', {
-          title: 'Write Line | Admin | Invalid Blog ',
-          blogTitle: title,
-          blogBody: body,
-          error: err,
-          success: ''
-        })
-        )
+      .then(result => console.log("document saved"))
+      .catch(err => console.log(err))
+
+    // send the respone back to the user 
+
+    res.render('admin-add-blog', {
+      title: 'Write Line | Admin | Add Blog',
+      blogTitle: '',
+      blogBody: '',
+      error: '',
+      success: `A new Blog has been added into '${category}' Category`
+    })
   }
 };
 

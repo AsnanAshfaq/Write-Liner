@@ -5,7 +5,7 @@ const adminRoutes = express.Router();
 
 //admin profile
 adminRoutes.get("/", (req, res) => {
-  res.render("./admin/admin", {
+  res.render("admin", {
     title: "Write Liner | Admin",
   });
 });
@@ -19,8 +19,8 @@ adminRoutes.get("/add", (req, res) => {});
 
 // adding a new blog by admin
 adminRoutes.get("/add-blog", (req, res) => {
-  res.render("./admin/admin-add-blog", {
-    title: "Write Liner | Add New Blog",
+  res.render("admin-add-blog", {
+    title: "Write Liner | Add new blog",
     blogTitle: '',
     blogBody: '',
     error: '',
@@ -31,8 +31,8 @@ adminRoutes.get("/add-blog", (req, res) => {
 
 // updating a blog by admin 
 adminRoutes.get("/update-blog", (req, res) => {
-  res.render("./admin/admin-update-blog", {
-    title: "Write Liner | Update Blog",
+  res.render("admin-update-blog", {
+    title: "Write Liner | Update blog",
   });
   
 });
@@ -40,15 +40,7 @@ adminRoutes.get("/update-blog", (req, res) => {
 
 // delete a  blog by admin
 adminRoutes.get("/delete-blog", (req, res) => {
-  res.render('./admin/admin-delete-blog',{
-    title:'Write Liner | Delete Blog'
-  })
+  res.send("Delete page for a blog")
 });
 
-// archive route 
-adminRoutes.get('/archive',(req,res) => {
-  res.render('./admin/admin-archive', {
-    title: 'Write Liner | Archive'
-  })
-})
 module.exports = adminRoutes;

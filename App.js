@@ -1,6 +1,8 @@
 const express = require('express')
 const mongoose = require('mongoose')
 require('dotenv/config')
+const Blog = require('./Model/blogSchema')
+
 
 //importing routes
 const blogRoutes = require('./Routes/blogRoutes')
@@ -16,12 +18,7 @@ mongoose.connect(process.env.DB_CONNECTION_STRING, {
     useUnifiedTopology: true,
     useNewUrlParser: true
 }, (error) => {
-    if (error != null) {
-        console.log("cant connect to mongo DB")
-        app.render('404',{
-            title: 'Cant Connect to the server '
-        })
-    }
+    if (error != null) console.log(error)
 })
 
 //setting view engine
@@ -46,12 +43,8 @@ app.get('/about', (req, res) => {
 })
 
 
-//middleware for Routes
+//middleware for  Routes
 app.use(blogRoutes)
-
-// authenticating the admin middleware goes down here 
-
-// admin routes middleware goes here 
 app.use('/admin', adminRoutes)
 
 //middleware for 404 error
