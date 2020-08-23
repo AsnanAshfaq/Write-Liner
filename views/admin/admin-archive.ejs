@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title%>
+    </title>
+
+    <!-- including other links  -->
+    <%- include('./../../Partion/linkTags.ejs')%>
+
+    <!-- css link  -->
+    <link rel="stylesheet" href="/Styles/Large_Screens/header.css">
+    <link rel="stylesheet" href="/Styles/Large_Screens/footer.css">
+
+</head>
+
+<body>
+
+    <!-- header  -->
+    <%- include('./../../Partion/header')%>
+
+    <div class="container-fluid ">
+        <div class="row">
+            <!-- side bar  -->
+            <%- include('./admin-sideBar.ejs')%>
+            <div class="col-lg-9 col-md-9 col-sm-9">
+                <div class="container-fluid mt-3 pl-3">
+                    <!-- content goes here  -->
+                    <div class="row">
+                        <div class="col-sm">
+                            <h3 class="" style="user-select: none;">Archived Blogs</h3>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm bg-light">
+                            <div class="row d-flex d-row">
+                                <div class="col-9 ">
+                                    <h5 class="px-1 pt-4" style="user-select: none;">I am the title of the blog...Title
+                                        length must be fulfilled from add blog</h5>
+                                </div>
+                                <div class="col-3 p-0 m-0 ">
+                                    <div class="dropdown d-flex justify-content-end align-items-end">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-right"
+                                            aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item text-success" href="#">Edit</a>
+                                            <a class="dropdown-item text-danger" href="#">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="px-1"
+                                        style="user-select: none; display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;overflow: hidden;text-overflow: ellipsis;">
+                                        Body length must be more than 50 .............Lorem ipsum dolor sit amet
+                                        consectetur adipisicing elit. Recusandae, corrupti?
+                                        Quod eligendi voluptas provident animi magnam ea quo ex vitae expedita cumque,
+                                        totam adipisci aut doloremque excepturi amet odit at.
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi fugiat
+                                        eligendi, explicabo repellat incidunt qui? Voluptatem nemo exercitationem
+                                        maiores, nostrum doloribus sunt, iste ipsum error doloremque asperiores
+                                        consectetur, minima ea!
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus modi quos
+                                        laudantium nisi. Accusantium dicta tenetur fuga doloribus, numquam repellat!
+                                        Ipsam a labore obcaecati deleniti atque! Cum commodi recusandae sed.
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, laudantium?
+                                        Quibusdam doloremque id repellat dignissimos animi excepturi quisquam, eum
+                                        expedita sit nulla possimus ab, dolores quia sunt quas perspiciatis commodi?
+                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit unde magni
+                                        quidem reprehenderit ipsum, sequi ipsam ratione voluptas aliquam assumenda
+                                        blanditiis dicta necessitatibus velit natus nisi. Suscipit quos iste ut.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- dynamic footer  -->
+    <%- include('./../../Partion/footer.ejs')%>
+
+    <!-- including bootstrap scripts  -->
+    <%- include('./../../Partion/BootstrapScripts') %>
+
+</body>
+
+</html>
