@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%- title%></title>
+
+    <!-- including other links  -->
+    <%- include('../Partion/linkTags.ejs')%>
+
+    <!-- css link  -->
+    <link rel="stylesheet" href="/Styles/Large_Screens/header.css">
+    <link rel="stylesheet" href="/Styles/Large_Screens/footer.css">
+</head>
+
+<body>
+    <!-- header  -->
+    <%- include('../Partion/header')%>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col px-0 mx-0 d-flex justify-content-center m-2" >
+                <img src="/<%= blog.image %>" class="img-fluid w-auto h-auto p-0 m-0" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row my-4 mx-2 d-flex flex-column">
+            <div class="col">
+                <h2 class="text-justify text-center text-capitalize" style="user-select: none;font-family: 'Playfair Display', serif;"><%- blog.title %> </h2>
+            </div>
+            <div class="col">
+                <p style="user-select: none;"><%- blog.body %> </p>
+                
+            </div>
+        </div>
+        <div class="row my-4 mx-2">
+            <div class="col">
+                <p>Published On
+                    <b><%- blog.createdAt.toString().substring(0,16) %> </b>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- dynamic footer  -->
+    <%- include('../Partion/footer.ejs')%>
+
+
+    <!-- including bootstrap scripts  -->
+    <%- include('../Partion/BootstrapScripts') %>
+</body>
+
+</html>

@@ -23,49 +23,26 @@
 
     <!-- front image  -->
     <div class=" w-100 h-100 bg-dark">
-        <div class="frontImageBlog1 blogOverImage">
-            <img src="/Images/blog.jpg" alt="" class="img-fluid  w-100 h-100" style="filter:grayscale(90);">
-        </div>
+        <img src="/Images/TextExpander-Blog-Images-4-1200x600.png" alt="" class="img-fluid  w-100 h-100"
+            style="filter:grayscale(90);">
     </div>
 
+
+    <!-- rest of the front page  -->
     <div class="container p-3">
         <h1 class="text-center" style="user-select: none;  font-family: 'Roboto', sans-serif;">Latest Blogs</h1>
     </div>
 
     <div class=" container ">
-        <h3 class="p-2" style="user-select: none;">Sports</h3>
-        <%- include('../Partion/blogCard',{category: 'Sports'}) %>
+
+        <!-- looping through the catgories list and displaying card for each catrgory  -->
+        <% blogsPerCategory.map((categoryContent) => { %>
+
+        <%- include('../Partion/blogCard',{categoryContent:categoryContent}) %>
+        <%}) %>
+
     </div>
 
-    <div class="container ">
-        <h3 class="p-2" style="user-select: none;">Fashion</h3>
-        <%- include('../Partion/blogCard',{category: 'Fashion'}) %>
-    </div>
-
-    <div class=" container ">
-        <h3 class="p-2" style="user-select: none;">Business</h3>
-        <%- include('../Partion/blogCard',{category: 'Business'}) %>
-    </div>
-
-    <div class=" container ">
-        <h3 class="p-2" style="user-select: none;">Religion</h3>
-        <%- include('../Partion/blogCard',{category: 'Religion'}) %>
-    </div>
-
-    <div class="container">
-        <h3 class="p-2" style="user-select: none;">Education</h3>
-        <%- include('../Partion/blogCard',{category: 'Education'}) %>
-    </div>
-
-    <div class="container">
-        <h3 class="p-2" style="user-select: none;">Technology</h3>
-        <%- include('../Partion/blogCard',{category: 'Technology'}) %>
-    </div>
-
-    <div class="container">
-        <h3 class="p-2" style="user-select: none;">Others</h3>
-        <%- include('../Partion/blogCard',{category: 'Others'}) %>
-    </div>
 
     <!--  footer  -->
     <%- include('../Partion/footer.ejs') %>

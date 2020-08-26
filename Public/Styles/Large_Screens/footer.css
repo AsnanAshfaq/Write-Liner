@@ -29,4 +29,7 @@
     padding: 20px;
     color: white;
 }
+.port-folio:hover{
+    text-decoration: none;
+}
 /* styling footer ENDS  */
